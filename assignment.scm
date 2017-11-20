@@ -17,6 +17,7 @@
 		  		))))))
 ;;;(define (convert number base))
 
+;;; Creates a game with two computers until they guess the same num
 (define (roll-till-you-win)
 	(let 
 		((die-roll (1+ (random 6)))
@@ -34,7 +35,7 @@
 
 ) ;;; end of function
 
-
+;;; Converts a number to base number
 (define (convert number base)
 	(let 
 		((divided (quotient number base)))

@@ -60,7 +60,3 @@
 
 	) ;;; end of base case if
 ) ;;; end of function
-
-(define (even num)
-	(if (not(= (modulo num 2) 0)) ;;; odd number
-		(display num)))

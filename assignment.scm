@@ -26,14 +26,25 @@ Scheme HW: Roll Dice, Convert dec to base x, Prime Numbers
 
 ;;; Converts a number to base number
 (define (convert number base)
+	(if (or (< base 2) (> base 9)) ;;; make sure base is between 2-9
+		(begin
+			(display "Enter a valid base number from 2-9")
+			(quit)
+		)
+	)
+	(if (< number 0) ;;; make sure number is positive
+		(begin
+			(display "Please enter a positive number")
+			(quit)
+		)
+	)
 	(let 
 		((divided (quotient number base)))
-	(if(= number 0) ;;; condition
-		(display "") ;; statements
-		(begin ;;; else statement
+	(if (not(= number 0)) ;;; condition
+		(begin 
 			(convert divided base)
 			(display (modulo number base))
-			);;; end of begin
+		);;; end of begin
 	);;; end of if 
 	) ;;; end of let
 ) ;;; end of function

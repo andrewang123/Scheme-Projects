@@ -1,4 +1,10 @@
-
+#|
+Andrew Ang
+Nov. 20th 2017
+Professor Arias
+CSC 3310: Concepts of Prog. Languages
+Scheme HW: Roll Dice, Convert dec to base x, Prime Numbers
+|#
 
 ;;; Creates a game with two computers until they guess the same num
 (define (roll-till-you-win)
@@ -8,8 +14,7 @@
 	(display "Bet: ") (display compguess)
 	(display " ")
 	(display "Result: ") (display die-roll)
-	(newline)
-			
+	(newline)		
 	(if (= die-roll compguess) ;;; condition
 		(display "You won!") ;;; statement for if
 		(roll-till-you-win) ;;; Else
@@ -57,6 +62,5 @@
 				(list-primes (- num 1)) ;;; else statement
 		) ;;; end of nested if
 	) ;;; end of else
-
 	) ;;; end of base case if
 ) ;;; end of function

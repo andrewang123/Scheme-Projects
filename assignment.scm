@@ -33,18 +33,34 @@
 	) ;;; end of let
 ) ;;; end of function
 
+;;; function to print primes up to that number
 (define (list-primes num)
-	(display num)
-	(if(= num 2 ) 
-		(display num)
-		
+	(if(= num 2) ;;; base case
 		(begin
-			(list-primes (- num 1))
 			(display num)
 			(newline)
-		);;; end of begin
-		) ;;; end of if
+		)		;;; end of base case
+	(begin ;;; beginning of else
+		(if (or (= num 3) (= num 5) (= num 7)
+				(and	(not (= (modulo num 2) 0))
+					    (not (= (modulo num 3) 0))
+						(not (= (modulo num 5) 0))
+						(not (= (modulo num 7) 0))
+				) ;;; end of and
+			) ;;; end of or 
+				(begin ;;; beginning of statement
+					(list-primes (- num 1))
+					(display num)
+					(newline)
+				
+				) ;;; end of statement
+				(list-primes (- num 1)) ;;; else statement
+		) ;;; end of nested if
+	) ;;; end of else
 
+	) ;;; end of base case if
+) ;;; end of function
 
-
-);;; end of function
+(define (even num)
+	(if (not(= (modulo num 2) 0)) ;;; odd number
+		(display num)))
